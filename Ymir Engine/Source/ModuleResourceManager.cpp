@@ -555,19 +555,19 @@ void ModuleResourceManager::ReImportModel(const std::string& modelPath, bool onl
 {
 	Model* model = new Model(modelPath, onlyReimport);
 
-	if (onlyReimport) {
+	//if (onlyReimport) {
 
-		App->scene->SetSelected();
-		model->modelGO->mParent->DeleteChild(model->modelGO);
+	//	App->scene->SetSelected();
+	//	model->modelGO->mParent->DeleteChild(model->modelGO);
 
-		App->scene->gameObjects.erase(
-			std::remove_if(App->scene->gameObjects.begin(), App->scene->gameObjects.end(),
-				[](const GameObject* obj) { return obj->selected; }
-			),
-			App->scene->gameObjects.end()
-		);
+	//	App->scene->gameObjects.erase(
+	//		std::remove_if(App->scene->gameObjects.begin(), App->scene->gameObjects.end(),
+	//			[](const GameObject* obj) { return obj->selected; }
+	//		),
+	//		App->scene->gameObjects.end()
+	//	);
 
-	}
+	//}
 
 	delete model;
 }
