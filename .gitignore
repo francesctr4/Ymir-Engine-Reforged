@@ -3,10 +3,16 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Delete Library Folder
+Library/
+
+# Delete Scripts DLL
+ScriptsAssembly-Output/
+
 # User-specific files
 *.rsuser
 *.suo
-*.user
+# *.user
 *.userosscache
 *.sln.docstates
 
@@ -23,7 +29,7 @@ mono_crash.*
 [Rr]eleases/
 x64/
 x86/
-[Ww][Ii][Nn]32/
+# [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
@@ -31,6 +37,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+[Ss]tandalone/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -73,7 +80,7 @@ StyleCopReport.xml
 *_p.c
 *_h.h
 *.ilk
-*.meta
+# *.meta
 *.obj
 *.iobj
 *.pch
@@ -396,3 +403,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+Ymir Engine/Game/AlienExtraction.exe

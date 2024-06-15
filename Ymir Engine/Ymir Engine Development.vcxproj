@@ -1,0 +1,714 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Standalone|Win32">
+      <Configuration>Standalone</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{746CC4C3-787F-4B0E-AA66-E388FE3FF4F6}</ProjectGuid>
+    <RootNamespace>SDLGame</RootNamespace>
+    <ProjectName>Ymir Engine</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Standalone|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Standalone|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>$(ProjectName)</TargetName>
+    <IncludePath>$(ProjectDir)Source\External;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(ProjectDir)Source\External;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Standalone|Win32'">
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Source\External;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Source\External;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Source\External</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Windows</SubSystem>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Source\External;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Standalone|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>_STANDALONE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Source\External;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Windows</SubSystem>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Source\External;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Icon.h" />
+    <ClInclude Include="Source\AreaLight.h" />
+    <ClInclude Include="Source\AudioBank.h" />
+    <ClInclude Include="Source\CAudioListener.h" />
+    <ClInclude Include="Source\CAudioSource.h" />
+    <ClInclude Include="Source\Animator.h" />
+    <ClInclude Include="Source\Bone.h" />
+    <ClInclude Include="Source\CAnimation.h" />
+    <ClInclude Include="Source\CCamera.h" />
+    <ClInclude Include="Source\CCollider.h" />
+    <ClInclude Include="Source\CLight.h" />
+    <ClInclude Include="Source\CParticleSystem.h" />
+    <ClInclude Include="Source\CNavMeshAgent.h" />
+    <ClInclude Include="Source\CScript.h" />
+    <ClInclude Include="Source\CS_Animation_Bindings.h" />
+    <ClInclude Include="Source\CS_Audio_Bindings.h" />
+    <ClInclude Include="Source\CS_Bindings.h" />
+    <ClInclude Include="Source\CS_Input_Bindings.h" />
+    <ClInclude Include="Source\CS_Particle_Bindings.h" />
+    <ClInclude Include="Source\CS_SaveLoad_Bindings.h" />
+    <ClInclude Include="Source\CS_UI_Bindings.h" />
+    <ClInclude Include="Source\C_UI.h" />
+    <ClInclude Include="Source\DefaultShader.h" />
+    <ClInclude Include="Source\DirectionalLight.h" />
+    <ClInclude Include="Source\EmitterSetting.h" />
+    <ClInclude Include="Source\EventSystem.h" />
+    <ClInclude Include="Source\External\ImGuiNodeEditor\include\crude_json.h" />
+    <ClInclude Include="Source\External\ImGuiNodeEditor\include\imgui_bezier_math.h" />
+    <ClInclude Include="Source\External\ImGuiNodeEditor\include\imgui_canvas.h" />
+    <ClInclude Include="Source\External\ImGuiNodeEditor\include\imgui_extra_math.h" />
+    <ClInclude Include="Source\External\ImGuiNodeEditor\include\imgui_node_editor.h" />
+    <ClInclude Include="Source\External\ImGuiNodeEditor\include\imgui_node_editor_internal.h" />
+    <ClInclude Include="Source\External\ImGuiTextEditor\include\TextEditor.h" />
+    <ClInclude Include="Source\External\ImGuizmo\include\GraphEditor.h" />
+    <ClInclude Include="Source\External\ImGuizmo\include\ImCurveEdit.h" />
+    <ClInclude Include="Source\External\ImGuizmo\include\ImGradient.h" />
+    <ClInclude Include="Source\External\ImGuizmo\include\ImGuizmo.h" />
+    <ClInclude Include="Source\External\ImGuizmo\include\ImSequencer.h" />
+    <ClInclude Include="Source\External\ImGuizmo\include\ImZoomSlider.h" />
+    <ClInclude Include="Source\External\PugiXML\pugiconfig.hpp" />
+    <ClInclude Include="Source\External\PugiXML\pugixml.hpp" />
+    <ClInclude Include="Source\External\ImGui\misc\cpp\imgui_stdlib.h" />
+    <ClInclude Include="Source\External\RecastNavigation\ChunkyTriMesh.h" />
+    <ClInclude Include="Source\External\RecastNavigation\DebugUtils\DebugDraw.h" />
+    <ClInclude Include="Source\External\RecastNavigation\DebugUtils\DetourDebugDraw.h" />
+    <ClInclude Include="Source\External\RecastNavigation\DebugUtils\RecastDebugDraw.h" />
+    <ClInclude Include="Source\External\RecastNavigation\DebugUtils\RecastDump.h" />
+    <ClInclude Include="Source\External\RecastNavigation\DebugUtils\SampleInterfaces.h" />
+    <ClInclude Include="Source\External\RecastNavigation\DetourTileCache\DetourTileCache.h" />
+    <ClInclude Include="Source\External\RecastNavigation\DetourTileCache\DetourTileCacheBuilder.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Detour\DetourAlloc.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Detour\DetourAssert.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Detour\DetourCommon.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Detour\DetourMath.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Detour\DetourNavMesh.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Detour\DetourNavMeshBuilder.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Detour\DetourNavMeshQuery.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Detour\DetourNode.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Detour\DetourStatus.h" />
+    <ClInclude Include="Source\External\RecastNavigation\InputGeom.h" />
+    <ClInclude Include="Source\External\RecastNavigation\NavMeshBuilder.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Recast\Recast.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Recast\RecastAlloc.h" />
+    <ClInclude Include="Source\External\RecastNavigation\Recast\RecastAssert.h" />
+    <ClInclude Include="Source\External\Tracy\tracy\Tracy.hpp" />
+    <ClInclude Include="Source\External\Wwise\AK\Comm\AkCommunication.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkAtomic.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkBytesCount.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkBytesMem.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkCallback.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkCommonDefs.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkDynamicDialogue.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkDynamicSequence.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkFPUtilities.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkMemoryMgr.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkMidiTypes.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkModule.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkQueryParameters.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkSimd.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkSimdMath.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkSoundEngine.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkSoundEngineExport.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkSpeakerConfig.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkSpeakerVolumes.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkStreamMgrModule.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkTypes.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\AkVirtualAcoustics.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\IAkMixerPlugin.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\IAkPlatformContext.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\IAkPlugin.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\IAkPluginMemAlloc.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\IAkProcessorFeatures.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\IAkRTPCSubscriber.h" />
+    <ClInclude Include="Source\External\Wwise\AK\SoundEngine\Common\IAkStreamMgr.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkAllocator.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkArray.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkAssert.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkAutoLock.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkBankReadHelpers.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkDynaBlkPool.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkFNVHash.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkHashList.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkHeap.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkKeyArray.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkKeyDef.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkListBare.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkListBareLight.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkLock.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkMonitorError.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkObject.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkPlatformFuncs.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkRingBuffer.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkSet.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkSmartPtr.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkString.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkSyncCaller.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkTls.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Common\AkVectors.h" />
+    <ClInclude Include="Source\External\Wwise\AK\Tools\Win32\AkCOMScope.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Common\AkDefaultLowLevelIODispatcher.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Common\AkFileLocationBase.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Common\AkFilePackage.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Common\AkFilePackageLowLevelIO.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Common\AkFilePackageLUT.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Common\AkMultipleFileLocation.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Win32\AkDefaultIOHookBlocking.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Win32\AkDefaultIOHookDeferred.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Win32\AkFileHelpers.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Win32\AkFilePackageLowLevelIOBlocking.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Win32\AkFilePackageLowLevelIODeferred.h" />
+    <ClInclude Include="Source\External\Wwise\low_level_IO\Win32\stdafx.h" />
+    <ClInclude Include="Source\FrameBuffer.h" />
+    <ClInclude Include="Source\G_UI.h" />
+    <ClInclude Include="Source\Application.h" />
+    <ClInclude Include="Source\CMaterial.h" />
+    <ClInclude Include="Source\CMesh.h" />
+    <ClInclude Include="Source\Color.h" />
+    <ClInclude Include="Source\Component.h" />
+    <ClInclude Include="Source\CTransform.h" />
+    <ClInclude Include="Source\External\Glew\include\eglew.h" />
+    <ClInclude Include="Source\External\Glew\include\glew.h" />
+    <ClInclude Include="Source\External\Glew\include\glxew.h" />
+    <ClInclude Include="Source\External\Glew\include\wglew.h" />
+    <ClInclude Include="Source\External\ImGui\backends\imgui_impl_opengl3.h" />
+    <ClInclude Include="Source\External\ImGui\backends\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="Source\External\ImGui\backends\imgui_impl_sdl2.h" />
+    <ClInclude Include="Source\External\ImGui\backends\imgui_impl_sdlrenderer2.h" />
+    <ClInclude Include="Source\External\ImGui\imconfig.h" />
+    <ClInclude Include="Source\External\ImGui\imgui.h" />
+    <ClInclude Include="Source\External\ImGui\imgui_internal.h" />
+    <ClInclude Include="Source\External\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="Source\External\ImGui\imstb_textedit.h" />
+    <ClInclude Include="Source\External\ImGui\imstb_truetype.h" />
+    <ClInclude Include="Source\External\mmgr\mmgr.h" />
+    <ClInclude Include="Source\External\mmgr\nommgr.h" />
+    <ClInclude Include="Source\External\Optick\include\optick.config.h" />
+    <ClInclude Include="Source\External\Optick\include\optick.h" />
+    <ClInclude Include="Source\External\Parson\parson.h" />
+    <ClInclude Include="Source\External\PhysFS\include\physfs.h" />
+    <ClInclude Include="Source\External\SDL\include\begin_code.h" />
+    <ClInclude Include="Source\External\SDL\include\close_code.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_assert.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_atomic.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_audio.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_bits.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_blendmode.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_clipboard.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_config.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_copying.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_cpuinfo.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_egl.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_endian.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_error.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_events.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_filesystem.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_gamecontroller.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_gesture.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_guid.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_haptic.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_hidapi.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_hints.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_joystick.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_keyboard.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_keycode.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_loadso.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_locale.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_log.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_main.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_messagebox.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_metal.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_misc.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_mouse.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_mutex.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_name.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_opengl.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_opengles.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_opengles2.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_opengles2_gl2.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_opengles2_gl2ext.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_opengles2_gl2platform.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_opengles2_khrplatform.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_opengl_glext.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_pixels.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_platform.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_power.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_quit.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_rect.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_render.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_revision.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_rwops.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_scancode.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_sensor.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_shape.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_stdinc.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_surface.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_system.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_syswm.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_assert.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_common.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_compare.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_crc32.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_font.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_fuzzer.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_harness.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_images.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_log.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_md5.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_memory.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_test_random.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_thread.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_timer.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_touch.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_types.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_version.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_video.h" />
+    <ClInclude Include="Source\External\SDL\include\SDL_vulkan.h" />
+    <ClInclude Include="Source\External\stb_image\stb_image.h" />
+    <ClInclude Include="Source\GameObject.h" />
+    <ClInclude Include="Source\Globals.h" />
+    <ClInclude Include="Source\ImGuiCustom.h" />
+    <ClInclude Include="Source\ImporterAnimation.h" />
+    <ClInclude Include="Source\ImporterMaterial.h" />
+    <ClInclude Include="Source\ImporterMesh.h" />
+    <ClInclude Include="Source\ImporterModel.h" />
+    <ClInclude Include="Source\ImporterNavMesh.h" />
+    <ClInclude Include="Source\ImporterSettings.h" />
+    <ClInclude Include="Source\ImporterShader.h" />
+    <ClInclude Include="Source\ImporterTexture.h" />
+    <ClInclude Include="Source\JsonFile.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Algorithm\Random\LCG.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\AABB.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\AABB2D.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Capsule.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Circle.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Cone.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Cylinder.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Frustum.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\GeometryAll.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\GeomType.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\HitInfo.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\KDTree.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Line.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\LineSegment.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\OBB.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\PBVolume.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Plane.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Polygon.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Polyhedron.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\QuadTree.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Ray.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Sphere.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\Triangle.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Geometry\TriangleMesh.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\MathBuildConfig.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\MathGeoLib.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\MathGeoLibFwd.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\assume.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\BitOps.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\Complex.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\CoordinateAxisConvention.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\FixedPoint.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\float2.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\float3.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\float3x3.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\float3x4.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\float4.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\float4x4.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\float4x4_neon.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\float4x4_sse.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\float4_neon.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\float4_sse.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\FloatCmp.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\MathAll.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\MathConstants.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\MathFunc.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\MathLog.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\MathNamespace.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\MathTypes.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\MatrixProxy.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\myassert.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\Polynomial.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\Quat.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\quat_simd.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\Rect.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\Reinterpret.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\SSEMath.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\sse_mathfun.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Math\TransformOps.h" />
+    <ClInclude Include="Source\External\MathGeoLib\include\Time\Clock.h" />
+    <ClInclude Include="Source\Light.h" />
+    <ClInclude Include="Source\ModuleLightManager.h" />
+    <ClInclude Include="Source\Log.h" />
+    <ClInclude Include="Source\Mesh.h" />
+    <ClInclude Include="Source\Model.h" />
+    <ClInclude Include="Source\ModuleAudio.h" />
+    <ClInclude Include="Source\ModuleCamera3D.h" />
+    <ClInclude Include="Source\ModuleEditor.h" />
+    <ClInclude Include="Source\ModuleFileSystem.h" />
+    <ClInclude Include="Source\ModulePathfinding.h" />
+    <ClInclude Include="Source\ModulePhysics.h" />
+    <ClInclude Include="Source\ModuleMonoManager.h" />
+    <ClInclude Include="Source\ModuleRenderer3D.h" />
+    <ClInclude Include="Source\Module.h" />
+    <ClInclude Include="Source\ModuleInput.h" />
+    <ClInclude Include="Source\ModuleResourceManager.h" />
+    <ClInclude Include="Source\ModuleScene.h" />
+    <ClInclude Include="Source\ModuleWindow.h" />
+    <ClInclude Include="Source\NodeEditor.h" />
+    <ClInclude Include="Source\Particle.h" />
+    <ClInclude Include="Source\ParticleEmitter.h" />
+    <ClInclude Include="Source\PhysBody.h" />
+    <ClInclude Include="Source\PhysfsEncapsule.h" />
+    <ClInclude Include="Source\PointLight.h" />
+    <ClInclude Include="Source\Primitive.h" />
+    <ClInclude Include="Source\Random.h" />
+    <ClInclude Include="Source\ResourceAnimation.h" />
+    <ClInclude Include="Source\ResourceMaterial.h" />
+    <ClInclude Include="Source\ResourceMesh.h" />
+    <ClInclude Include="Source\ResourceModel.h" />
+    <ClInclude Include="Source\Resources.h" />
+    <ClInclude Include="Source\ResourceScene.h" />
+    <ClInclude Include="Source\ResourceShader.h" />
+    <ClInclude Include="Source\ResourceTexture.h" />
+    <ClInclude Include="Source\ScriptEditor.h" />
+    <ClInclude Include="Source\Settings.h" />
+    <ClInclude Include="Source\Shader.h" />
+    <ClInclude Include="Source\ShaderEditor.h" />
+    <ClInclude Include="Source\Singleton.h" />
+    <ClInclude Include="Source\SpotLight.h" />
+    <ClInclude Include="Source\Texture.h" />
+    <ClInclude Include="Source\TimeManager.h" />
+    <ClInclude Include="Source\Timer.h" />
+    <ClInclude Include="Source\Tracy.h" />
+    <ClInclude Include="Source\UI_Button.h" />
+    <ClInclude Include="Source\UI_Canvas.h" />
+    <ClInclude Include="Source\UI_CheckBox.h" />
+    <ClInclude Include="Source\UI_Image.h" />
+    <ClInclude Include="Source\UI_InputBox.h" />
+    <ClInclude Include="Source\UI_Slider.h" />
+    <ClInclude Include="Source\UI_Text.h" />
+    <ClInclude Include="Source\UI_Transform.h" />
+    <ClInclude Include="Source\Wwise.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Animator.cpp" />
+    <ClCompile Include="Source\Application.cpp" />
+    <ClCompile Include="Source\AreaLight.cpp" />
+    <ClCompile Include="Source\CAudioListener.cpp" />
+    <ClCompile Include="Source\CAudioSource.cpp" />
+    <ClCompile Include="Source\Bone.cpp" />
+    <ClCompile Include="Source\CAnimation.cpp" />
+    <ClCompile Include="Source\CCamera.cpp" />
+    <ClCompile Include="Source\CCollider.cpp" />
+    <ClCompile Include="Source\CLight.cpp" />
+    <ClCompile Include="Source\CMaterial.cpp" />
+    <ClCompile Include="Source\CMesh.cpp" />
+    <ClCompile Include="Source\CNavMeshAgent.cpp" />
+    <ClCompile Include="Source\Color.cpp" />
+    <ClCompile Include="Source\Component.cpp" />
+    <ClCompile Include="Source\CParticleSystem.cpp" />
+    <ClCompile Include="Source\CScript.cpp" />
+    <ClCompile Include="Source\CTransform.cpp" />
+    <ClCompile Include="Source\C_UI.cpp" />
+    <ClCompile Include="Source\Delegate.cpp" />
+    <ClCompile Include="Source\DirectionalLight.cpp" />
+    <ClCompile Include="Source\EmitterSetting.cpp" />
+    <ClCompile Include="Source\External\ImGuiNodeEditor\include\crude_json.cpp" />
+    <ClCompile Include="Source\External\ImGuiNodeEditor\include\imgui_canvas.cpp" />
+    <ClCompile Include="Source\External\ImGuiNodeEditor\include\imgui_node_editor.cpp" />
+    <ClCompile Include="Source\External\ImGuiNodeEditor\include\imgui_node_editor_api.cpp" />
+    <ClCompile Include="Source\External\ImGuiTextEditor\include\TextEditor.cpp" />
+    <ClCompile Include="Source\External\ImGuizmo\include\GraphEditor.cpp" />
+    <ClCompile Include="Source\External\ImGuizmo\include\ImCurveEdit.cpp" />
+    <ClCompile Include="Source\External\ImGuizmo\include\ImGradient.cpp" />
+    <ClCompile Include="Source\External\ImGuizmo\include\ImGuizmo.cpp" />
+    <ClCompile Include="Source\External\ImGuizmo\include\ImSequencer.cpp" />
+    <ClCompile Include="Source\External\ImGui\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="Source\External\ImGui\backends\imgui_impl_sdl2.cpp" />
+    <ClCompile Include="Source\External\ImGui\backends\imgui_impl_sdlrenderer2.cpp" />
+    <ClCompile Include="Source\External\ImGui\imgui.cpp" />
+    <ClCompile Include="Source\External\ImGui\imgui_demo.cpp" />
+    <ClCompile Include="Source\External\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="Source\External\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="Source\External\ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="Source\External\ImGui\misc\cpp\imgui_stdlib.cpp" />
+    <ClCompile Include="Source\External\mmgr\mmgr.cpp" />
+    <ClCompile Include="Source\External\Parson\parson.cpp" />
+    <ClCompile Include="Source\External\PugiXML\pugixml.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\ChunkyTriMesh.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\DebugUtils\DebugDraw.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\DebugUtils\DetourDebugDraw.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\DebugUtils\RecastDebugDraw.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\DebugUtils\RecastDump.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\DebugUtils\SampleInterfaces.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\DetourTileCache\DetourTileCache.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\DetourTileCache\DetourTileCacheBuilder.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Detour\DetourAlloc.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Detour\DetourCommon.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Detour\DetourNavMesh.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Detour\DetourNavMeshBuilder.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Detour\DetourNavMeshQuery.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Detour\DetourNode.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\InputGeom.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\NavMeshBuilder.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Recast\Recast.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Recast\RecastAlloc.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Recast\RecastArea.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Recast\RecastContour.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Recast\RecastFilter.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Recast\RecastLayers.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Recast\RecastMesh.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Recast\RecastMeshDetail.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Recast\RecastRasterization.cpp" />
+    <ClCompile Include="Source\External\RecastNavigation\Recast\RecastRegion.cpp" />
+    <ClCompile Include="Source\External\Tracy\TracyClient.cpp" />
+    <ClCompile Include="Source\External\Wwise\low_level_IO\Common\AkDefaultLowLevelIODispatcher.cpp" />
+    <ClCompile Include="Source\External\Wwise\low_level_IO\Common\AkFileLocationBase.cpp" />
+    <ClCompile Include="Source\External\Wwise\low_level_IO\Common\AkFilePackage.cpp" />
+    <ClCompile Include="Source\External\Wwise\low_level_IO\Common\AkFilePackageLUT.cpp" />
+    <ClCompile Include="Source\External\Wwise\low_level_IO\Common\AkMultipleFileLocation.cpp" />
+    <ClCompile Include="Source\External\Wwise\low_level_IO\Win32\AkDefaultIOHookBlocking.cpp" />
+    <ClCompile Include="Source\External\Wwise\low_level_IO\Win32\AkDefaultIOHookDeferred.cpp" />
+    <ClCompile Include="Source\External\Wwise\low_level_IO\Win32\stdafx.cpp" />
+    <ClCompile Include="Source\FrameBuffer.cpp" />
+    <ClCompile Include="Source\GameObject.cpp" />
+    <ClCompile Include="Source\G_UI.cpp" />
+    <ClCompile Include="Source\ImGuiCustom.cpp" />
+    <ClCompile Include="Source\ImporterAnimation.cpp" />
+    <ClCompile Include="Source\ImporterMaterial.cpp" />
+    <ClCompile Include="Source\ImporterMesh.cpp" />
+    <ClCompile Include="Source\ImporterModel.cpp" />
+    <ClCompile Include="Source\ImporterNavMesh.cpp" />
+    <ClCompile Include="Source\ImporterSettings.cpp" />
+    <ClCompile Include="Source\ImporterShader.cpp" />
+    <ClCompile Include="Source\ImporterTexture.cpp" />
+    <ClCompile Include="Source\JsonFile.cpp" />
+    <ClCompile Include="Source\Light.cpp" />
+    <ClCompile Include="Source\ModuleLightManager.cpp" />
+    <ClCompile Include="Source\Log.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Algorithm\Random\LCG.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\AABB.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Capsule.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Circle.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Cone.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Cylinder.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Frustum.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Line.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\LineSegment.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\OBB.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Plane.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Polygon.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Polyhedron.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Ray.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Sphere.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\Triangle.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Geometry\TriangleMesh.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\BitOps.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\float2.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\float3.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\float3x3.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\float3x4.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\float4.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\float4x4.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\MathFunc.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\MathLog.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\MathOps.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\Polynomial.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\Quat.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\SSEMath.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Math\TransformOps.cpp" />
+    <ClCompile Include="Source\External\MathGeoLib\include\Time\Clock.cpp" />
+    <ClCompile Include="Source\Mesh.cpp" />
+    <ClCompile Include="Source\Model.cpp" />
+    <ClCompile Include="Source\Module.cpp" />
+    <ClCompile Include="Source\ModuleAudio.cpp" />
+    <ClCompile Include="Source\ModuleCamera3D.cpp" />
+    <ClCompile Include="Source\ModuleEditor.cpp" />
+    <ClCompile Include="Source\ModuleFileSystem.cpp" />
+    <ClCompile Include="Source\ModuleInput.cpp" />
+    <ClCompile Include="Source\ModulePathfinding.cpp" />
+    <ClCompile Include="Source\ModulePhysics.cpp" />
+    <ClCompile Include="Source\ModuleMonoManager.cpp" />
+    <ClCompile Include="Source\ModuleRenderer3D.cpp" />
+    <ClCompile Include="Source\ModuleResourceManager.cpp" />
+    <ClCompile Include="Source\ModuleScene.cpp" />
+    <ClCompile Include="Source\ModuleWindow.cpp" />
+    <ClCompile Include="Source\NodeEditor.cpp" />
+    <ClCompile Include="Source\Particle.cpp" />
+    <ClCompile Include="Source\ParticleEmitter.cpp" />
+    <ClCompile Include="Source\PhysBody.cpp" />
+    <ClCompile Include="Source\PhysfsEncapsule.cpp" />
+    <ClCompile Include="Source\PointLight.cpp" />
+    <ClCompile Include="Source\Primitive.cpp" />
+    <ClCompile Include="Source\Random.cpp" />
+    <ClCompile Include="Source\ResourceAnimation.cpp" />
+    <ClCompile Include="Source\ResourceMaterial.cpp" />
+    <ClCompile Include="Source\Resources.cpp" />
+    <ClCompile Include="Source\ResourceMesh.cpp" />
+    <ClCompile Include="Source\ResourceModel.cpp" />
+    <ClCompile Include="Source\ResourceScene.cpp" />
+    <ClCompile Include="Source\ResourceShader.cpp" />
+    <ClCompile Include="Source\ResourceTexture.cpp" />
+    <ClCompile Include="Source\ScriptEditor.cpp" />
+    <ClCompile Include="Source\Settings.cpp" />
+    <ClCompile Include="Source\Shader.cpp" />
+    <ClCompile Include="Source\ShaderEditor.cpp" />
+    <ClCompile Include="Source\Singleton.cpp" />
+    <ClCompile Include="Source\SpotLight.cpp" />
+    <ClCompile Include="Source\Texture.cpp" />
+    <ClCompile Include="Source\TimeManager.cpp" />
+    <ClCompile Include="Source\Timer.cpp" />
+    <ClCompile Include="Source\UI_Button.cpp" />
+    <ClCompile Include="Source\UI_Canvas.cpp" />
+    <ClCompile Include="Source\UI_CheckBox.cpp" />
+    <ClCompile Include="Source\UI_Image.cpp" />
+    <ClCompile Include="Source\UI_InputBox.cpp" />
+    <ClCompile Include="Source\UI_Slider.cpp" />
+    <ClCompile Include="Source\UI_Text.cpp" />
+    <ClCompile Include="Source\UI_Transform.cpp" />
+    <ClCompile Include="Source\Wwise.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Game\Assets\Shaders\AnimationShader.glsl" />
+    <None Include="Game\Assets\Shaders\ColorShader.glsl" />
+    <None Include="Game\Assets\Shaders\DefaultShader.glsl" />
+    <None Include="Game\Assets\Shaders\Framebuffer.glsl" />
+    <None Include="Game\Assets\Shaders\LavaShader.glsl" />
+    <None Include="Game\Assets\Shaders\Lighting Shader.glsl" />
+    <None Include="Game\Assets\Shaders\MyShader.glsl" />
+    <None Include="Game\Assets\Shaders\OutlineShader.glsl" />
+    <None Include="Game\Assets\Shaders\RainbowShader.glsl" />
+    <None Include="Game\Assets\Shaders\SpecularLight.glsl" />
+    <None Include="Game\Assets\Shaders\UI Shader.glsl" />
+    <None Include="Game\Assets\Shaders\WaterShader.glsl" />
+    <None Include="Source\External\ImGuiNodeEditor\include\imgui_bezier_math.inl" />
+    <None Include="Source\External\ImGuiNodeEditor\include\imgui_extra_math.inl" />
+    <None Include="Source\External\ImGuiNodeEditor\include\imgui_node_editor_internal.inl" />
+    <None Include="Source\External\MathGeoLib\include\Geometry\KDTree.inl" />
+    <None Include="Source\External\MathGeoLib\include\Geometry\QuadTree.inl" />
+    <None Include="Source\External\MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_AVX.inl" />
+    <None Include="Source\External\MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_CPP.inl" />
+    <None Include="Source\External\MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_SSE.inl" />
+    <None Include="Source\External\MathGeoLib\include\Math\Matrix.inl" />
+    <None Include="Source\External\Wwise\low_level_IO\Common\AkFilePackageLowLevelIO.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\Icon.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Game\Assets\Icon\Alien_Extraction_Logo.ico" />
+    <Image Include="Game\Assets\Icon\YmirEngineIcon.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
