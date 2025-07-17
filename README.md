@@ -1,20 +1,33 @@
-# Ymir Engine...? REFORGED!
+# Ymir Engine: **REFORGED!**
 
-### Made by: [Francesc Teruel Rodríguez](https://github.com/francesctr4)
+### 👨‍💻 Made by: [Francesc Teruel Rodríguez](https://github.com/francesctr4)  
+### 🔗 Repository: [Ymir Engine Reforged](https://github.com/francesctr4/Ymir-Engine-Reforged)  
+### 🚀 Current Release: [v1.0 – *Alien Extraction*](https://github.com/francesctr4/Ymir-Engine-Reforged/releases/tag/v1.0)
 
-### Repository Link: [Ymir Engine Reforged](https://github.com/francesctr4/Ymir-Engine-Reforged)
+---
 
-### Current release version: [v1.0 - Alien Extraction](https://github.com/francesctr4/Ymir-Engine-Reforged/releases/tag/v1.0)
+## 🔧 About the Engine
 
-## Description
+**Ymir Engine** is a custom game engine built from scratch in C++ using **SDL** and **OpenGL** for graphics and system management. It was developed as part of the *Game Engines* subject during the third year of the **Videogame Design and Development** degree at **CITM UPC (Terrassa)**, supervised by [Miquel Suau](https://github.com/MayKoder).
 
-Ymir Engine is part of the Game Engines subject, on the third year of the Videogame Design and Development degree, taught at CITM UPC (Terrassa) and supervised by [Miquel Suau](https://github.com/MayKoder).
+Its primary goal is to provide a clean and educational architecture for understanding how real-world game engines work — from low-level rendering to high-level systems.
 
-The engine has been made from scratch in C++ using SDL and OpenGL to manage graphics. The main target of the project is to be able to integrate complex systems such as graphics management and game engine architecture in a simple and understandable way for educational purposes.
+---
 
-During the development of the game [Alien Extraction](https://github.com/Clapcom-Studios/Alien-Extraction), the engine was also being improved adding more high level systems, in order to be able to develop all the features required by the game.
+## 🎮 Developed Alongside: *Alien Extraction*
 
-## v1.0 - Alien Extraction
-### Special thanks to the entirety of [Clapcom Studios](https://github.com/Clapcom-Studios/) for helping me bring this engine to be capable of somethintg greater, now i get the handle to make it even better.
+While creating the game [**Alien Extraction**](https://github.com/Clapcom-Studios/Alien-Extraction), the engine evolved to support more advanced features and systems. Many high-level capabilities were added to meet the needs of the game, pushing the engine’s flexibility and potential.
+
+This marked a turning point — **Ymir Engine** became something more powerful, more adaptable, and ready for future expansions.
+
+---
+
+## ✨ v1.0 – *Alien Extraction*
+
+Special thanks to the awesome team at [**Clapcom Studios**](https://github.com/Clapcom-Studios/) for collaborating throughout the development of Alien Extraction. Your feedback and support helped shape the engine into something greater.
+
+> _Now that I have the reins — it's time to push Ymir Engine even further._
+
+---
 
 ![Ymir Engine](https://github.com/Clapcom-Studios/Alien-Extraction/assets/99948892/e7bc2375-1484-473a-9125-35d1ea381f2d)
