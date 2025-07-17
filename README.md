@@ -32,3 +32,30 @@ Special thanks to the awesome team at [**Clapcom Studios**](https://github.com/C
 ---
 
 ![Ymir Engine](https://github.com/Clapcom-Studios/Alien-Extraction/assets/99948892/e7bc2375-1484-473a-9125-35d1ea381f2d)
+
+## 🧩 Engine Features
+
+Ymir Engine Reforged v1.0 ships with a wide range of **real-world systems** designed to support both gameplay and development.
+
+### 🖥️ Editor & Tools
+- 🧠 **Scene Graph** – Hierarchical object system with parent-child relationships.
+- 🗂️ **Asset Browser** – Browse and manage all project assets with drag & drop support.
+- 🔍 **Inspector Panel** – View and modify components and entity properties in real time.
+- 📦 **Prefab System** – Create reusable templates for in-game objects.
+- 💾 **Load/Save Scenes** – Fully serializable scenes with runtime support.
+- 🚀 **Release System** – Export standalone builds with configurable settings.
+
+---
+
+### 🎮 Gameplay & Runtime Systems
+- 👤 **Scripting System** – Bind C++ components with Lua or custom scripting for fast iteration.
+- 🧠 **AI System** – Modular AI logic with behavior trees and navigation.
+- 🦴 **Skeletal Animation** – Rig-based animation system with blend trees and IK support.
+- 🎇 **Particle System** – GPU-driven effects with customizable emitters and behaviors.
+- 💥 **Physics Engine** – Rigidbody physics, collisions, and triggers via integrated middleware.
+- 🔊 **Audio Engine** – 2D/3D spatial audio playback with volume and pitch control.
+- 💡 **Shader Pipeline** – Custom GLSL shaders with support for deferred/forward rendering.
+
+---
+
+> 💡 *All systems were iteratively built while developing [**Alien Extraction**](https://github.com/Clapcom-Studios/Alien-Extraction), ensuring production-ready stability and usability.*
