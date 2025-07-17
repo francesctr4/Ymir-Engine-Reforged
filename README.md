@@ -22,7 +22,7 @@ This marked a turning point — **Ymir Engine** became something more powerful, 
 
 ---
 
-## ✨ v1.0 – *Alien Extraction*
+## ✨ Ymir Engine Reforged v1.0 – *Alien Extraction*
 
 Special thanks to the awesome team at [**Clapcom Studios**](https://github.com/Clapcom-Studios/) for collaborating throughout the development of Alien Extraction. Your feedback and support helped shape the engine into something greater.
 
