@@ -1,6 +1,5 @@
 # Ymir Engine: **REFORGED!**
 
-### 👨‍💻 Made by: [Francesc Teruel Rodríguez](https://github.com/francesctr4)  
 ### 🔗 Repository: [Ymir Engine Reforged](https://github.com/francesctr4/Ymir-Engine-Reforged)  
 ### 🚀 Current Release: [Ymir Engine Reforged v1.0](https://github.com/francesctr4/Ymir-Engine-Reforged/releases/tag/v1.0)
 
@@ -29,8 +28,6 @@ This marked a turning point — **Ymir Engine** became something more powerful, 
 ## ✨ Ymir Engine Reforged v1.0 – *Alien Extraction*
 
 Special thanks to the awesome team at [**Clapcom Studios**](https://github.com/Clapcom-Studios/) for collaborating throughout the development of Alien Extraction. Your feedback and support helped shape the engine into something greater.
-
-> _Now that I have the reins — it's time to push Ymir Engine even further._
 
 ---
 
