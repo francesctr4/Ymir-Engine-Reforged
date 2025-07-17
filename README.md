@@ -14,4 +14,7 @@ The engine has been made from scratch in C++ using SDL and OpenGL to manage grap
 
 During the development of the game [Alien Extraction](https://github.com/Clapcom-Studios/Alien-Extraction), the engine was also being improved adding more high level systems, in order to be able to develop all the features required by the game.
 
+## v1.0 - Alien Extraction
+### Special thanks to the entirety of [Clapcom Studios](https://github.com/Clapcom-Studios/) for helping me bring this engine to be capable of somethintg greater, now i get the handle to make it even better.
+
 ![Ymir Engine](https://github.com/Clapcom-Studios/Alien-Extraction/assets/99948892/e7bc2375-1484-473a-9125-35d1ea381f2d)
