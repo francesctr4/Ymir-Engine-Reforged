@@ -43,18 +43,19 @@ Ymir Engine Reforged v1.0 ships with a wide range of **real-world systems** desi
 - 🔍 **Inspector Panel** – View and modify components and entity properties in real time.
 - 📦 **Prefab System** – Create reusable templates for in-game objects.
 - 💾 **Load/Save Scenes** – Fully serializable scenes with runtime support.
-- 🚀 **Release System** – Export standalone builds with configurable settings.
+- 🚀 **Release System** – Export standalone builds.
 
 ---
 
 ### 🎮 Gameplay & Runtime Systems
-- 👤 **Scripting System** – Bind C++ components with Lua or custom scripting for fast iteration.
-- 🧠 **AI System** – Modular AI logic with behavior trees and navigation.
-- 🦴 **Skeletal Animation** – Rig-based animation system with blend trees and IK support.
-- 🎇 **Particle System** – GPU-driven effects with customizable emitters and behaviors.
-- 💥 **Physics Engine** – Rigidbody physics, collisions, and triggers via integrated middleware.
-- 🔊 **Audio Engine** – 2D/3D spatial audio playback with volume and pitch control.
+- 👤 **Scripting System** – Bind C# scripts for the development of gameplay systems using Mono.
+- 🧠 **AI System** – Modular AI logic with behavior trees and navigation via Recast.
+- 🦴 **Skeletal Animation** – Rig-based animation system with blending and FBX support with Assimp.
+- 🎇 **Particle System** – Effects with customizable emitters and behaviors.
+- 💥 **Physics Engine** – Rigidbody physics, collisions and triggers via Bullet.
+- 🔊 **Audio Engine** – 2D/3D spatial audio playback with volume and pitch control using Wwise.
 - 💡 **Shader Pipeline** – Custom GLSL shaders with support for deferred/forward rendering.
+- 🖱️ **User Interface** – In-game UI system for HUDs, menus, buttons, and interactive elements.
 
 ---
 
